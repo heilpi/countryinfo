@@ -1,3 +1,5 @@
+import PopulationChart from "./PopulationChart"
+
 const Countries = ({country}) => {
     return (
         <>
@@ -5,8 +7,8 @@ const Countries = ({country}) => {
             <p>Capital: {country.capital}</p>
             <p>Population: {country.population}</p>
             <p>Continent: {country.continents}</p>
-            <p>Timezone:{country.timezones} </p>
             <img src={country.flags.png} alt='' />
+            <PopulationChart country = {country}/>
         </>
     )
 }
