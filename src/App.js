@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import Search from './components/Search'
 
 const App = () => {
 
   const [countries, setCountries] = useState([])
-  const [filter, setFilter] = useState('')
+  const [search, setSearch] = useState('')
 
   const hook = () => {
     console.log('effect')
@@ -19,21 +20,22 @@ const App = () => {
   useEffect(hook, [])
   console.log('render', countries.length, 'countries')
 
-  const handleFilter = (event) => {
-    setFilter(event.target.value)
+  const handleSearch = (event) => {
+    setSearch(event.target.value)
   }
 
   const filteredSearch = countries.filter((country) =>
-    country.name.common.toLowerCase().includes(filter.toLocaleLowerCase())
+    country.name.common.toLowerCase().includes(search.toLocaleLowerCase())
   );
   console.log(filteredSearch);
 
   return (
-    <div>
-        <p>
-          Edit 
-        </p>
-    </div>
+    <>
+      <Search
+        search = {search}
+        handleSearch = {handleSearch}
+      />
+    </>
   );
 }
 
