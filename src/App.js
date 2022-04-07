@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import Search from './components/Search'
+import Info from './components/Info'
 
 const App = () => {
 
@@ -35,6 +36,10 @@ const App = () => {
         search = {search}
         handleSearch = {handleSearch}
       />
+      <Info
+        search = {search}
+        filteredSearch = {filteredSearch}
+        />
     </>
   );
 }
