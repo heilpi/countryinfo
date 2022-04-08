@@ -3,8 +3,8 @@ import axios from 'axios'
 
 const PopulationChart = ({country}) => {
 
-    const [years, setYears] = useState([])
-
+    const [years, setYears] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const hook = () => {
         console.log('effect')
@@ -14,18 +14,22 @@ const PopulationChart = ({country}) => {
             console.log('promise fulfilled')
             setYears(response.data)
         })
+        .finally(() => {
+            setLoading(false)
+        })
     }
 
     useEffect(hook, [])
     console.log('render', years.length, 'years')
-    console.log(years)
         return (
             <>
+            {loading 
+            ? (<p>Loading...</p>)
+            : (
             <ul>
                 {years[1].map(year =>
                 <li key = {year.date}>{year.date}   {year.value}</li>)}
-            </ul>
-            <p>{country.cca3}</p>
+            </ul>)}
             </>
         )
 }

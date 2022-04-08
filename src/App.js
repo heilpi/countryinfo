@@ -28,7 +28,6 @@ const App = () => {
   const filteredSearch = countries.filter((country) =>
     country.name.common.toLowerCase().includes(search.toLocaleLowerCase())
   );
-  console.log(filteredSearch);
 
   return (
     <>

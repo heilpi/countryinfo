@@ -1,6 +1,11 @@
 import PopulationChart from "./PopulationChart"
+import { useState } from 'react'
+
 
 const Countries = ({country}) => {
+
+    const [showChart, setShowChart] = useState(true)
+
     return (
         <>
             <h2>{country.name.common}</h2>
@@ -8,7 +13,15 @@ const Countries = ({country}) => {
             <p>Population: {country.population}</p>
             <p>Continent: {country.continents}</p>
             <img src={country.flags.png} alt='' />
-            <PopulationChart country = {country}/>
+            <>
+            <button onClick={() => setShowChart(!showChart)}>
+                {showChart ? 'Show' : 'Hide' } population chart    
+            </button> 
+            </>
+            {showChart ? 
+                (null) : (<PopulationChart country = {country}/>
+            )}
+            
         </>
     )
 }
