@@ -1,0 +1,25 @@
+body {
+    background-color: #282c34;
+    color: white;
+    padding: 50px;
+    font-family: consolas;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 20px 2px;
+}
+.button {
+    background-color: transparent;
+    color: rgba(128, 182, 244, 1);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: consolas;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2px solid rgba(128, 182, 244, 0.6);
+    border-radius: 0.5rem;
+}
