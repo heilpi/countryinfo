@@ -31,6 +31,7 @@ const App = () => {
 
   return (
     <>
+      <h1>Country Info</h1>
       <Search
         search = {search}
         handleSearch = {handleSearch}

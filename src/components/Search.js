@@ -1,7 +1,7 @@
 const Search = (props) => {
     return (
         <div>
-            country
+            <p>country</p>
             <input
                 value = {props.search}
                 onChange = {props.handleSearch}

@@ -1,5 +1,5 @@
-import PopulationChart from "./PopulationChart"
 import { useState } from 'react'
+import PopulationData from "./PopulationData"
 
 
 const Countries = ({country}) => {
@@ -9,17 +9,16 @@ const Countries = ({country}) => {
     return (
         <>
             <h2>{country.name.common}</h2>
+            <img src={country.flags.png} alt='' />
             <p>Capital: {country.capital}</p>
             <p>Population: {country.population}</p>
             <p>Continent: {country.continents}</p>
-            <img src={country.flags.png} alt='' />
-            <>
-            <button onClick={() => setShowChart(!showChart)}>
-                {showChart ? 'Show' : 'Hide' } population chart    
+            
+            <button class='button' onClick={() => setShowChart(!showChart)}>
+                {showChart ? 'Show' : 'Hide' } population over time    
             </button> 
-            </>
             {showChart ? 
-                (null) : (<PopulationChart country = {country}/>
+                (null) : (<PopulationData country = {country}/>
             )}
             
         </>
